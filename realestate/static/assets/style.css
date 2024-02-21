@@ -1,10 +1,4 @@
-*{
-    background-image: url(/realestate/static/assets/images/bg.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-   
-}
+
 
 .title{
     text-align: center;
@@ -14,3 +8,27 @@
     font-weight: bold;
     
 }
+.content{
+    font-style: normal;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.testimonials img{
+    width: 14px;
+    height: 20px;
+}
+.thumbnail{
+    width: 250px;
+    height: 300px;
+}
+.f_thumb{
+    height: 300px;
+    width: 300px;
+
+}
+.c_thumb{
+    height: 400px;
+    width: 300px;
+
+}
+
