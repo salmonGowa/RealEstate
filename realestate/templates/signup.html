@@ -1,1 +1,45 @@
 {% extends "base.html" %}
+<title>
+{% block title %}
+SIGNUP
+{% endblock title %}
+
+{% block body %}</title>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            
+           
+
+        </div>
+        <div class="col-md-4 mt-3">
+            <h2 class="text-white text-center">SIGNUP</h2>
+            <form action="/signup" method="post"> {% csrf_token %}
+                <div class="form-group mt-2">
+                 <input type="text" id="username" class="form-control" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group mt-2">
+                <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group mt-2">
+                <input type="password" id="pass1" class="form-control" name="pass1" placeholder="Create Password" required>
+                </div>
+                <div class="form-group mt-2">
+                <input type="password" id="pass2" class="form-control" name="pass2" placeholder="Confirm Password" required>
+                </div>
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary" type="submit">SignUp</button>
+                    
+                  </div>
+                  <div class="form-group text-white">
+                <p>Already have an account <a href="login" >Login</a> </p>
+                  
+                  </div>
+
+            </form>
+        </div>
+    
+    </div>
+</div>
+
+{% endblock body %}
