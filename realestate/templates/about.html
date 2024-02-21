@@ -1,108 +1,61 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+<title>
+  {% block title %}ABOUT{% endblock title %}
+</title>
+{% block body %}
+<!-- About Section - Home Page -->
+<section id="about" class="about">
 
-<html>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-xl-center gy-5">
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title></title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/realestate/static/assets/style.css" />
+      <div class="col-xl-5 content">
+        <h3>About Us</h3>
+        <h2>Ducimus rerum libero reprehenderit cumque</h2>
+        <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim reiciendis minus et rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui assumenda incidunt voluptatem tempora deleniti soluta.</p>
+        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+      </div>
 
+      <div class="col-xl-7">
+        <div class="row gy-4 icon-boxes">
 
-</head>
-
-<body>
-  <section>
-    <div class="title">
-      <h3>ABOUT BINARYSHADE REAL ESTATE AGENCY</h3>
-    </div>
-    <div class="col-4">
-      <div class="container">
-        
-          <div class="col-sm"></div>
-          <div class="col-sm">
-            <div class="content">
-              <p>BINARYSHADE Realtor Landing Page
-        
-                This landing page from Keri Shull is a great example<br>
-                of a local realtor conveying everything a potential client is<br>
-                thinking. Notice how it's easy to search and find what<br>
-                you might be looking for, while trust is shown through<br>
-                glowing reviews and testimonials.</p>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <i class="bi bi-buildings"></i>
+              <h3>Eius provident</h3>
+              <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
             </div>
-          </div>
-          <div class="col-sm"></div>
-        
-      </div>
-      
+          </div> <!-- End Icon Box -->
 
-    </div>
-    
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-clipboard-pulse"></i>
+              <h3>Rerum aperiam</h3>
+              <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia</p>
+            </div>
+          </div> <!-- End Icon Box -->
 
-  </section>
-  <section class="testimanials">
-    <div class="title">TESTIMONIALS</div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <img src="/realestate/static/assets/images/slas2.jpeg"class="thumbnail" alt="">
-          
-        </div>
-        <div class="col-sm">
-          <img src="/realestate/static/assets/images/slash1.jpeg" class="thumbnail" alt="">
-        </div>
-        <div class="col-sm">
-          <img src="/realestate/static/assets/images/slash3.jpeg" class="thumbnail" alt="">
-        </div>
-        <div class="col-sm">
-          <img src="/realestate/static/assets/images/slash4.jpeg" class="thumbnail" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-command"></i>
+              <h3>Veniam omnis</h3>
+              <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti</p>
+            </div>
+          </div> <!-- End Icon Box -->
 
-  <section class="featured">
-    <div class="title">FEATURED</div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="/realestate/static/assets/images/fe1.jpeg" class="f_thumb" alt="">
-        </div>
-        <div class="col-md-4">
-          <img src="/realestate/static/assets/images/fe2.jpeg"class="f_thumb" alt="">
-        </div>
-        <div class="col-md-4">
-          <img src="/realestate/static/assets/images/fe3.jpeg" class="f_thumb" alt="">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-graph-up-arrow"></i>
+              <h3>Delares sapiente</h3>
+              <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
 
-  <section class="communities">
-    <div class="title">COMMUNITIES</div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="/realestate/static/assets/images/com1.jpeg" class="c_thumb" alt="">
-        </div>
-        <div class="col-md-6">
-          <img src="/realestate/static/assets/images/com2.jpeg" class="c_thumb" alt="">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script src="/realestate/static/assets/app.js"></script>
-</body>
-
-</html>
+</section><!-- End About Section -->
+{% endblock body %}
