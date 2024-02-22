@@ -1,1 +1,37 @@
 {% extends "base.html" %}
+{% block title %}
+LOGIN
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+<center>
+        <div class="col-md-4 mt-3">
+            <h2 class="text-white text-center">Login</h2>
+            <form action="" method="post"> {% csrf_token %}
+                
+                <div class="form-group mt-2">
+                <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group mt-2">
+                <input type="password" id="pass1" class="form-control" name="pass1" placeholder="Create Password" required>
+                </div>
+                
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary" type="submit">LOGIN</button>
+                    
+                  </div>
+                  <div class="form-group text-white">
+                <p>Dont have an account? <a href="signup" >signup</a> </p>
+                  
+                  </div>
+
+            </form>
+        </div>
+    </center>
+    </div>
+</div>
+
+{% endblock body %}
