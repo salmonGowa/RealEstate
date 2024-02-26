@@ -17,9 +17,14 @@ def handlesignup(request):
 
 
         if password1!=confpass:
-            return HttpResponse("Password Dont Match")
+            return render(request,'signup.html')
+        try:
+            if User.objects.get(username=email):
+                return render(request,'signup.html')
+        except Exception as identifier:
+            pass
         
-        user=User.objects.create_user(uname,password1,email)
+        user=User.objects.create_user(uname,email,password1)
         user.save()
 
 
