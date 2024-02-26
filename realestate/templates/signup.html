@@ -3,15 +3,25 @@
 {% block title %}
 SIGNUP
 {% endblock title %}
+</title>
+{% block body %}
 
-{% block body %}</title>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
         </div>
         <center>
         <div class="col-md-4 mt-3">
-            <h2 class="text-white text-center">SIGNUP</h2>
+            <h2 class="text-black text-center">SIGNUP</h2>
+            {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          <strong>
+            {{message}}
+
+          </strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+        </div>
+        {% endfor %}
             <form action="/handlesignup" method="post"> {% csrf_token %}
                 <div class="form-group mt-2">
                  <input type="text" id="username" class="form-control" name="username" placeholder="Username" required>

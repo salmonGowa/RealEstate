@@ -80,8 +80,22 @@
         </div>
       </div>
     </nav>
+    <section id= "hero">
+      <div class="hero-container">
+        {% block content %}
 
-    <main id="main">{% block body %} {% endblock body %}</main>
+        
+
+
+        {% endblock content %}
+      </div>
+
+    </section>
+
+    <main id="main">
+      {% block body %}
+       {% endblock body %}
+    </main>
     <footer id="footer" class="footer">
       <div class="container footer-top">
         <div class="row gy-4">

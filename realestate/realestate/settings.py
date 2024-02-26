@@ -1,7 +1,7 @@
 
 
 from pathlib import Path
-
+from django.contrib import messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -102,7 +102,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+#sending emails
+#EMAIL_HOST='smtp.gmail.com'
+"""EMAIL_HOST_USER='your email'
+EMAIL_HOST_PASSWORD='your email password'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_BACKEND='django.core.mail.backend.smtp.EmailBackend'
+"""
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 import os
@@ -114,3 +121,7 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGES_TAGS={
+    messages.ERROR:'danger'
+}
