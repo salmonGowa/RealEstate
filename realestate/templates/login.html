@@ -19,7 +19,7 @@ LOGIN
           <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
         </div>
         {% endfor %}
-            <form action="" method="post"> {% csrf_token %}
+            <form action="/handlelogin" method="post"> {% csrf_token %}
                 
                 <div class="form-group mt-2">
                 <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
@@ -32,8 +32,8 @@ LOGIN
                     <button class="btn btn-primary" type="submit">LOGIN</button>
                     
                   </div>
-                  <div class="form-group text-white">
-                <p>Dont have an account? <a href="signup" >signup</a> </p>
+                  <div class="form-group text-black">
+                <p>Dont have an account? <a href="handlesignup" >signup</a> </p>
                   
                   </div>
 

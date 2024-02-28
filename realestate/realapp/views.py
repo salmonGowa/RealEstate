@@ -13,6 +13,11 @@ from django.core.mail import EmailMessage
 # Create your views here.
 def handlelogin(request):
     
+    if request.metod=="POST":
+        username=request.POST['email']
+        userpassword=request.POST['pass1']
+        myuser=authenticate(username=username,password=userpassword)
+    
     return render(request,'login.html')
 
 
@@ -29,7 +34,7 @@ def handlesignup(request):
             messages.warning(request,"passwords dint match!")
             return render(request,'signup.html')
         try:
-            if User.objects.get(username=email):
+            if User.objects.get(email=email):
                 messages.info(request,"Email already exists!")
                 return render(request,'signup.html')
         except Exception as identifier:
