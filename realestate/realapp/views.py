@@ -1,12 +1,15 @@
 #from base64 import urlsafe_b64encode
 
+from django.conf import settings
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
+from django.views import View
 from .utils import TokenGenerator,generate_token
-from django.utils.encoding import force_bytes
+from django.utils.encoding import force_bytes, force_str,DjangoUnicodeDecodeError
+from django.core.mail import EmailMessage
 # Create your views here.
 def handlelogin(request):
     
@@ -43,10 +46,32 @@ def handlesignup(request):
             'token':generate_token.make_token(user)
         })
 
+        email_message= EmailMessage(email_subject, message, settings.EMAIL_HOST_USER, [email])
+        email_message.send()
+        messages.success(request,"click the link below to activate your account")
+        
+        return redirect('login')
+
 
 
     return render(request,'signup.html')
 
+
+class ActivateAccountView(View):
+    def get(self, request, uidb64, token):
+        try:
+            uid=force_str(urlsafe_base64_decode(uidb64))
+            user=User.objects.get(pk=uid)
+        except Exception as identifier:
+            user=None
+        
+        if user is not None and generate_token.check_token(user,token):
+            user.is_active=True
+            user.save()
+            
+            messages.info(request,"Account activated succefully")
+            return redirect('login')
+        return render(request,'activatefail.html')
 
 
 def contact(request):
@@ -57,3 +82,5 @@ def index(request):
     return render(request,'index.html')
 def logout(request):
     return render(request,'login.html')
+
+

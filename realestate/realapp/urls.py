@@ -9,4 +9,5 @@ urlpatterns = [
     path('contact',views.contact,name="contact"),
     path('about',views.about,name="about"),
     path('logout',views.logout,name="logout"),
+    path('activate/<uidb64>/<token>',views.ActivateAccountView.as_view(),name='activate')
     ]
