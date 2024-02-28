@@ -17,7 +17,7 @@ def handlelogin(request):
         username=request.POST['email']
         userpassword=request.POST['pass1']
         myuser=authenticate(username=username,password=userpassword)
-    
+    if 
     return render(request,'login.html')
 
 
