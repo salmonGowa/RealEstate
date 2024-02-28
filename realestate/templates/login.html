@@ -19,7 +19,7 @@ LOGIN
           <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
         </div>
         {% endfor %}
-            <form action="/handlelogin" method="post"> {% csrf_token %}
+            <form action="/login" method="post"> {% csrf_token %}
                 
                 <div class="form-group mt-2">
                 <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>

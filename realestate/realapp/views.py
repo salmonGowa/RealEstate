@@ -10,14 +10,21 @@ from django.views import View
 from .utils import TokenGenerator,generate_token
 from django.utils.encoding import force_bytes, force_str,DjangoUnicodeDecodeError
 from django.core.mail import EmailMessage
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def handlelogin(request):
     
-    if request.metod=="POST":
+    if request.method=="POST":
         username=request.POST['email']
         userpassword=request.POST['pass1']
         myuser=authenticate(username=username,password=userpassword)
-    if 
+    if myuser is not None:
+        login(request,myuser)
+        messages.success(request,"Login successful")
+        return render(request,"index.html")
+    else:
+        messages.error(request,"invalid Credentials")
+        return redirect(request,'login')
     return render(request,'login.html')
 
 
