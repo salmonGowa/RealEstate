@@ -1,4 +1,3 @@
-#from base64 import urlsafe_b64encode
 
 from django.conf import settings
 from django.shortcuts import render,redirect,HttpResponse
@@ -11,6 +10,7 @@ from .utils import TokenGenerator,generate_token
 from django.utils.encoding import force_bytes, force_str,DjangoUnicodeDecodeError
 from django.core.mail import EmailMessage
 from django.contrib.auth import authenticate,login,logout
+from .models import Contact
 # Create your views here.
 def handlelogin(request):
     
@@ -82,11 +82,24 @@ class ActivateAccountView(View):
             user.save()
             
             messages.info(request,"Account activated succefully")
-            return redirect('login')
+            return redirect('/login')
         return render(request,'activatefail.html')
 
 
 def contact(request):
+    if request.method=="POST":
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        mesage=request.POST.get('message')
+        
+        query=Contact(name=name,email=email,subject=subject,mesage=mesage)
+        query.save()
+        
+        messages.success(request,"Thank you For contacting us we'll get back to you soon...")
+        return redirect('contact')
+        
+    
     return render(request,'contact.html')
 def about(request):
     return render(request,'about.html')
