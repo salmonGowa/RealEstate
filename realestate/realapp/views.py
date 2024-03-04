@@ -103,9 +103,15 @@ def contact(request):
     return render(request,'contact.html')
 def about(request):
     return render(request,'about.html')
+
+
 def index(request):
     return render(request,'index.html')
+
+
 def logout(request):
+    logout(request)
+    messages.info(request,"Logout successful")
     return render(request,'login.html')
 
 

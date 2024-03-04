@@ -12,12 +12,16 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static '/assets/style.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <!--navbar-->
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">BINARYSHADE</a>
+        <a class="navbar-brand" href="/">BINARYSHADE</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -44,6 +48,13 @@
               <a class="nav-link" href="contact">CONTACT</a>
             </li>
 
+            {% if request.user.is_authenticated %}
+            <li>
+              <a class="dropdown-item" href="handlelogin">LOGOUT</a>
+              {{user.username}}
+            </li>
+
+            {% else %}
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -59,12 +70,10 @@
                   <a class="dropdown-item" href="handlesignup">SIGNUP</a>
                 </li>
                 <li><a class="dropdown-item" href="handlelogin">LOGIN</a></li>
-
-                <li>
-                  <a class="dropdown-item" href="handlelogin">LOGOUT</a>
-                </li>
               </ul>
             </li>
+
+            {% endif %}
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -80,28 +89,20 @@
         </div>
       </div>
     </nav>
-    <section id= "hero">
+    <section id="hero">
       <div class="hero-container">
-        {% block content %}
-
-        
-
-
-        {% endblock content %}
+        {% block content %} {% endblock content %}
       </div>
-
     </section>
 
-    <main id="main">
-      {% block body %}
-       {% endblock body %}
-    </main>
+    <main id="main">{% block body %} {% endblock body %}</main>
+
     <footer id="footer" class="footer">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
             <div class="social-links d-flex mt-4">
-              <a href=""><i class="ri-twitter-x-fill"></i></a>
+              <a href=""><i class="ri-twitter-x-line"></i></a>
               <a href=""><i class="bi bi-facebook"></i></a>
               <a href=""><i class="bi bi-instagram"></i></a>
               <a href=""><i class="bi bi-linkedin"></i></a>
